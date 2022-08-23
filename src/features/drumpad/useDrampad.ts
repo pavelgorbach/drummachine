@@ -24,7 +24,7 @@ export default function useDrumpad() {
   const [power, setPower] = useState(false)
   const [volume, setVolume] = useState('50') 
   const [bankId, setBankId] = useState('heater_kit')
-  const [displayValue, setDisplayValue] = useState('') 
+  const [displayValue, setDisplayValue] = useState('')
 
   const currentBank = drumPad.bank ? drumPad.bank.items[bankId] : null
 
@@ -69,23 +69,9 @@ export default function useDrumpad() {
     const sound = audioRefs.current[x] || document.getElementById(x)
     sound.currentTime = 0
     sound.volume = Number(volume) / 100
+    sound.play()
     handleDisplayChange(currentBank.samples[x].title)
-    sound.play() 
   }, [currentBank, handleDisplayChange, power, volume])
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (PADS.some(x => x === e.key.toUpperCase())) {
-        handlePlay(e.key.toUpperCase() as ButtonId)
-      }
-    }
-
-    document.addEventListener('keydown', handleKeyDown)
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [handlePlay])
 
   return {
     status: drumPad.status,
