@@ -7,7 +7,7 @@ function App() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <a className={styles.githubButton} href="https://github.com/pavelgorbach/markdown" target="blank">
+        <a className={styles.githubButton} href="https://github.com/pavelgorbach/drummachine" target="blank">
           <img src={GitHub} alt="GitHub" />  
         </a>
         <h1 className={styles.title}>Drum machine</h1>
