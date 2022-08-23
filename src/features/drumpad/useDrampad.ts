@@ -15,6 +15,7 @@ export default function useDrumpad() {
       dispatch(fetchBankAsync()) 
     }
     fetchData()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const drumPad = useAppSelector(selectDrumPad)
