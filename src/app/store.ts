@@ -1,5 +1,5 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
-import drumPadReducer from '../features/drumpad/drumPadSlice'
+import drumPadReducer from '../features/drumpad/drumpadSlice'
 
 export const store = configureStore({
   reducer: {

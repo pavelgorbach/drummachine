@@ -3,7 +3,7 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 import { ButtonId } from './types'
 import { debounce } from '../../utils'
 import { useAppSelector, useAppDispatch } from '../../app/hooks'
-import { fetchBankAsync, selectDrumPad } from './drumPadSlice'
+import { fetchBankAsync, selectDrumPad } from './drumpadSlice'
 
 export const PADS: ButtonId[] = ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C']
 
