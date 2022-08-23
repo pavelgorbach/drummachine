@@ -1,58 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+
+import styles from './App.module.scss'
+import GitHub from './GitHub_Logo.png'
+import DrumPad from './features/drumpad/Drumpad'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <a className={styles.githubButton} href="https://github.com/pavelgorbach/markdown" target="blank">
+          <img src={GitHub} alt="GitHub" />  
+        </a>
+        <h1 className={styles.title}>Drum machine</h1>
       </header>
+
+      <div className={styles.main}>
+        <DrumPad />
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
